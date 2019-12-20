@@ -1,0 +1,11 @@
+<script>
+    let size = 8, hash = "#" , space =" ", finalword = "";
+    for(let i = 1; i<=size; i++){
+        for(let j = 1; j <=size; j++){
+            if((i+j) % 2 == 0 ) finalword = finalword + space ;
+            else finalword = finalword + hash ;
+        }
+        finalword = finalword + "\n";
+    }
+    console.log(finalword);
+</script>
