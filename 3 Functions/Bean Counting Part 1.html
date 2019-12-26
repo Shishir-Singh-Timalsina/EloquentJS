@@ -1,0 +1,23 @@
+<script>
+    let inputWord = prompt("Enter a Sting");
+    
+    let numberOf_B = countBs(inputWord);
+
+    console.log("Number of B is " + numberOf_B);
+    alert("Numbr of B is " + numberOf_B);
+
+
+    function countBs(Word){
+
+        let numberOfWord = Word.length;
+        let count = 0;
+
+        for(let i = 0; i <= numberOfWord -1; i++){
+            if(Word[i] == "B") count++;
+        }
+        return count;
+
+
+    }
+
+</script>

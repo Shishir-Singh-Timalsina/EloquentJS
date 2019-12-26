@@ -1,0 +1,40 @@
+<script>
+    let inputWord = prompt("Enter a Sting");
+    let inputCharacter = prompt("Enter character that is to be counted");
+    
+    console.log("Given word is "+ inputWord+ " and given character whose number to be found is " + inputCharacter)
+
+    let numberOf_B = countBs(inputWord);
+    let numberof_GivenCharacter = countChar(inputWord,inputCharacter);
+
+    console.log("Number of B is " + numberOf_B)
+    alert("Numbr of B is " + numberOf_B);
+
+    console.log("Number of "+inputCharacter+" is " + numberof_GivenCharacter)
+    alert("Numbr of "+inputCharacter+" is " + numberof_GivenCharacter);
+
+    function countBs(Word){
+
+        let numberOfWord = Word.length;
+        let count = 0;
+
+        for(let i = 0; i <= numberOfWord -1; i++){
+            if(Word[i] == "B") count++;
+        }
+        return count; 
+                                // Alternative Method just => return countChar(Word, "B");    
+    }
+
+    function countChar(Word,Character){
+
+        let numberOfWord = Word.length;
+        let count = 0;
+
+        for(let i = 0; i <= numberOfWord -1; i++){
+            if(Word[i] == Character) count++;
+        }
+        return count;
+
+    }
+
+</script>
