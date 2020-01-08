@@ -1,3 +1,51 @@
 <script>
-    
+    console.log(range(1,10));
+    console.log(sum(range(1,10)));
+    console.log(range(1,50,2));
+
+    console.log(range(5,2));
+    console.log(range(50,1, -2));
+
+
+
+    function range(start,end,step){
+
+        let first_array_range = [];
+
+        if (start < end){
+            if (step == undefined || step == 0) step = 1;
+            else if (step < 0) step = -step;
+
+            for(i = start; i <= end; i= i + step){
+                first_array_range.push(start);
+                start = start + step;
+
+            }
+        }
+        else if (start > end){
+            if (step == undefined || step == 0) step = - 1;
+            else if (step > 0) step = -step;
+
+
+            for(i = start; i >= end; i = i + step){
+                first_array_range.push(start);
+                start = start + step;
+            }
+
+        }
+        return first_array_range;
+
+    }
+
+    function sum(sum_array){
+
+        let sum = 0;
+
+        for( let value of sum_array){
+            sum = sum + value;
+        }
+        return sum;
+
+    }
+
 </script>
