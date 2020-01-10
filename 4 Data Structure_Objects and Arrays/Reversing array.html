@@ -1,26 +1,40 @@
 <script>
-    let example_array=[0,1,2,3,4,5,6];
+    let example_array=["A",2,3,4,"e",6,7,,9,10,11,12,13,,15];
 
-    Array_reverse_with_method = reverseArray(example_array);
-    
-   // console.log(Array_reverse_with_method);
+    console.log(example_array);
+
+    console.log(reverseArray(example_array));
+    console.log( reverseArrayInPlace(example_array));
+
 
     function reverseArray(Array){
         
-       /* reverse_array_with_method = Array.reverse();        Methoid not applicable for this example
-        return reverse_array_with_method;*/
+       /* reverse_array = Array.reverse();        Methoid not applicable for this example
+        return reverse_array;*/
 
-        for(let element of Array){
 
-           // console.log(Array.pop());
-           
+        let new_array = [];
+
+        for(i = Array.length-1 ; i >= 0; i--){
+            new_array.push(Array[i]);
         }
 
+    return new_array;
+    }
 
-    
-    
-        return 11111;
+    function reverseArrayInPlace(Array){
 
+        Length_of_Array = Array.length;
+
+        for (i = 0; i <= Array.length / 2; i++){
+
+            temp_value = Array[i];
+            Array[i] = Array[Length_of_Array-1];
+            Array[Length_of_Array-1]= temp_value;
+            Length_of_Array--;
+
+        }
+        return Array;
 
     }
 
