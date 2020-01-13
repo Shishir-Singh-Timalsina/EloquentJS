@@ -1,0 +1,65 @@
+<script>
+
+     arrayToList([1,2,3,4,5,6,7]); 
+     
+    function arrayToList(Array){
+       
+        let list;
+
+        for( i = Array.length-1; i>= 0; i--){
+
+             list = {
+                value: Array[i],
+                rest: list
+            };
+         }
+
+        console.log(list);                              // Log list
+        console.log(listToArray(list));                 // List to array with valur of value
+        console.log(prepend(10,prepend(20,null)));      // log of prepend
+        console.log(nth(list,4));                       // finding nth place of given position 
+                                                        /* 0 1 , 1 2 ---- 3 4, 4 5 n so on*/
+    }                                                              
+
+    function listToArray(list){
+
+        let  new_array = [];
+
+        for(let i = list; i != null ; i = i.rest ){
+            new_array.push(i.value);
+        }
+
+        return new_array;       //https://stackoverflow.com/questions/28672642/how-does-this-for-loop-condition-work
+    }
+
+    function prepend(value, list) {
+        return {value, rest: list};
+      }
+
+      function nth(list, n) {
+        if (!list) return undefined;
+        else if (n == 0) return list.value;
+        else return nth(list.rest, n - 1);
+
+        /*let placementvalue = 0;
+        for (let i = list; i ; i = i.rest ){
+             placementvalue = i.value;
+             if(i.value == n-1) break;
+        } 
+
+        return placementvalue;*/    //         Self method without recursion
+       
+    
+      }
+</script>
+
+/*Note https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+
+list = {  
+        value: 1,  
+        rest: {     
+                value: 2,    
+                rest: {      
+                        value: 3,      
+                        rest: null     
+        }
