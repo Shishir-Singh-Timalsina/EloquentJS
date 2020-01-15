@@ -1,0 +1,27 @@
+<script>
+    let list = {
+        name : "Shishir Singh",
+        age : 28,
+        contact : 
+    }
+
+    let list2 = {
+        name : "Shishir Singh",
+        age : 28
+    }
+
+    let list3 = {
+        name : "Hari prad",
+        age : 25
+    }
+
+    console.log(deepEqual(list, list2));    //Expect True
+    console.log(deepEqual(list,list3));     //Expect False
+
+
+
+    function deepEqual(list1, list2){
+        if (list1 == list2) return true;
+        else return false;
+    }
+</script>
