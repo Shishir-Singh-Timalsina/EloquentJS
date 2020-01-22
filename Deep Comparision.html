@@ -1,0 +1,54 @@
+<script>
+    let list1 = {
+        name : "Shishir Singh",
+        age : 27,
+        address : {
+            temporary : "oulu",
+            permanent : "Kathmandy"
+            
+        }
+    }
+
+    let list2 = {
+        name : "Shishir Singh",
+        age : 27,
+    }
+
+    let addresses = {
+        temporary : "oulu",
+        permanent : "Kathmandy"
+        
+    }
+
+    
+    console.log(deepEqual(list1, list1));    //Expect True
+    console.log(deepEqual(list1,list2));     //Expect False
+
+    list2.address = addresses;
+
+    console.log(deepEqual(list1,list2));     //Expect True
+
+
+
+    function deepEqual(first_array, second_array) {
+
+        let first_array_keys = Object.keys(first_array), second_array_keys = Object.keys(second_array);
+
+       //console.log("First",first_array_keys,"\nSecond",second_array_keys);
+
+       if( first_array_keys.length != second_array_keys.length) return false;
+
+        if (JSON.stringify(first_array) == JSON.stringify(second_array)) return true;
+       
+        if (first_array == null || typeof first_array != "object" ||
+            second_array == null || typeof second_array != "object") return false;
+    
+      
+        for (let keys of first_array_keys) {
+          if (!second_array_keys.includes(keys) || !deepEqual(first_array[keys], second_array[keys])) return false;
+        }
+      
+        return true;
+      }
+</script>
+
